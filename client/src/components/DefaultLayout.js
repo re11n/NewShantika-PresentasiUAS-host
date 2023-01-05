@@ -18,11 +18,11 @@ function DefaultLayout({ children }) {
       icon: "ri-file-list-line",
       path: "/bookings",
     },
-    {
-      name: "Profile",
-      icon: "ri-user-line",
-      path: "/profile",
-    },
+    // {
+    //   name: "Profile",
+    //   icon: "ri-user-line",
+    //   path: "/profile",
+    // },
     {
       name: "Logout",
       icon: "ri-logout-box-line",

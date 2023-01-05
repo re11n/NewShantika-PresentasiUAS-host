@@ -9,24 +9,24 @@ function Bus({ bus }) {
       <hr />
       <div className="d-flex justify-content-between">
         <div>
-          <p className="text-sm">From</p>
+          <p className="text-sm">Dari</p>
           <p className="text-sm">{bus.from}</p>
         </div>
 
         <div>
-          <p className="text-sm">To</p>
+          <p className="text-sm">Ke</p>
           <p className="text-sm">{bus.to}</p>
         </div>
 
         <div>
-          <p className="text-sm">Fare</p>
-          <p className="text-sm">$ {bus.fare} /-</p>
+          <p className="text-sm">Harga Tiket</p>
+          <p className="text-sm">Rp {bus.fare} /-</p>
         </div>
       </div>
       <hr />
       <div className="d-flex justify-content-between align-items-end">
         <div>
-          <p className="text-sm">Joureny Date</p>
+          <p className="text-sm">Tanggal Berangkat</p>
           <p className="text-sm">{bus.journeyDate}</p>
         </div>
 

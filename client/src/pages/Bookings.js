@@ -42,25 +42,25 @@ function Bookings() {
 
   const columns = [
     {
-      title: "Bus Name",
+      title: "Nama Bus",
       dataIndex: "name",
       key: "bus",
     },
     {
-      title: "Bus Number",
+      title: "Nomor Bus",
       dataIndex: "number",
       key: "bus",
     },
     {
-      title: "Journey Date",
+      title: "Tanggal Berangkat",
       dataIndex: "journeyDate",
     },
     {
-      title: "Journey Time",
+      title: "Jam Berangkat",
       dataIndex: "departure",
     },
     {
-      title: "Seats",
+      title: "Nomor Kursi",
       dataIndex: "seats",
       render: (seats) => {
         return seats.join(", ");
@@ -78,7 +78,7 @@ function Bookings() {
               setShowPrintModal(true);
             }}
           >
-            Print Ticekt
+            Print Tiket
           </p>
         </div>
       ),
