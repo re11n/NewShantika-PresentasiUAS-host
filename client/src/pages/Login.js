@@ -30,7 +30,7 @@ function Login() {
   return (
     <div className="h-screen d-flex justify-content-center align-items-center auth">
       <div className="w-400 card p-3">
-        <h1 className="text-lg">SheyBus - Login</h1>
+        <h1 className="text-lg">New Shantika - Login</h1>
         <hr />
         <Form layout="vertical" onFinish={onFinish}>
           <Form.Item label="Email" name="email">
