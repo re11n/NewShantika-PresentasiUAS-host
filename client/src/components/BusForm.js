@@ -101,7 +101,7 @@ function BusForm({
           <Col lg={12} xs={24}>
             <Form.Item label="Type" name="type">
               <select name="" id="">
-                <option value="AC">AC</option>
+                <option value="AC" selected="selected">AC</option>
                 <option value="Non-AC">Non-AC</option>
               </select>
             </Form.Item>
