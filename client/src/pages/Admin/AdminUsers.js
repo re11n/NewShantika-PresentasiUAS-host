@@ -74,7 +74,7 @@ function AdminUsers() {
 
   const columns = [
     {
-      title: "Name",
+      title: "Nama",
       dataIndex: "name",
     },
     {

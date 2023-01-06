@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Bus = require("../models/busModel");
 const authMiddleware = require("../middlewares/authMiddleware");
 
-// add-bus
+
 
 router.post("/add-bus", authMiddleware, async (req, res) => {
   try {
@@ -10,35 +10,34 @@ router.post("/add-bus", authMiddleware, async (req, res) => {
     if (existingBus) {
       return res.status(200).send({
         success: false,
-        message: "Bus already exists",
+        message: "Bus Sudah Ada",
       });
     }
     const newBus = new Bus(req.body);
     await newBus.save();
     return res.status(200).send({
       success: true,
-      message: "Bus added successfully",
+      message: "Bus Berhasil Ditambahkan",
     });
   } catch (error) {
     res.status(500).send({ success: false, message: error.message });
   }
 });
 
-// update-bus
 
 router.post("/update-bus", authMiddleware, async (req, res) => {
   try {
     await Bus.findByIdAndUpdate(req.body._id, req.body);
     return res.status(200).send({
       success: true,
-      message: "Bus updated successfully",
+      message: "Bus Berhasil Diubah",
     });
   } catch (error) {
     res.status(500).send({ success: false, message: error.message });
   }
 });
 
-// delete-bus
+
 
 router.post("/delete-bus", authMiddleware, async (req, res) => {
   try {
@@ -52,7 +51,7 @@ router.post("/delete-bus", authMiddleware, async (req, res) => {
   }
 });
 
-// get-all-buses
+
 
 router.post("/get-all-buses", authMiddleware, async (req, res) => {
   try {
@@ -67,7 +66,7 @@ router.post("/get-all-buses", authMiddleware, async (req, res) => {
   }
 });
 
-// get-bus-by-id
+
 
 router.post("/get-bus-by-id", authMiddleware, async (req, res) => {
   try {

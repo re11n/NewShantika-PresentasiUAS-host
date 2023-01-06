@@ -50,23 +50,23 @@ function AdminBuses() {
 
   const columns = [
     {
-      title: "Name",
+      title: "Nama",
       dataIndex: "name",
     },
     {
-      title: "Number",
+      title: "No",
       dataIndex: "number",
     },
     {
-      title: "From",
+      title: "Dari",
       dataIndex: "from",
     },
     {
-      title: "To",
+      title: "Ke",
       dataIndex: "to",
     },
     {
-      title: "Journey Date",
+      title: "Tanggal Berangkat",
       dataIndex: "journeyDate",
     },
     {
@@ -104,7 +104,7 @@ function AdminBuses() {
       <div className="d-flex justify-content-between my-2">
         <PageTitle title="Buses" />
         <button className="primary-btn" onClick={() => setShowBusForm(true)}>
-          Add Bus
+          Tambah Bus
         </button>
       </div>
 

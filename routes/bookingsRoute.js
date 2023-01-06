@@ -4,7 +4,7 @@ const Booking = require("../models/bookingsModel");
 const Bus = require("../models/busModel");
 const stripe = require("stripe")(process.env.stripe_key);
 const { v4: uuidv4 } = require("uuid");
-// book a seat
+
 
 router.post("/book-seat", authMiddleware, async (req, res) => {
   try {
@@ -17,20 +17,20 @@ router.post("/book-seat", authMiddleware, async (req, res) => {
     bus.seatsBooked = [...bus.seatsBooked, ...req.body.seats];
     await bus.save();
     res.status(200).send({
-      message: "Booking successful",
+      message: "Booking Berhasil!!",
       data: newBooking,
       success: true,
     });
   } catch (error) {
     res.status(500).send({
-      message: "Booking failed",
+      message: "Booking Gagal!!",
       data: error,
       success: false,
     });
   }
 });
 
-// make payment
+
 
 router.post("/make-payment", authMiddleware, async (req, res) => {
   try {
@@ -53,7 +53,7 @@ router.post("/make-payment", authMiddleware, async (req, res) => {
 
     if (payment) {
       res.status(200).send({
-        message: "Payment successful",
+        message: "Pembayaran Berhasil!!",
         data: {
           transactionId: payment.source.id,
         },
@@ -61,7 +61,7 @@ router.post("/make-payment", authMiddleware, async (req, res) => {
       });
     } else {
       res.status(500).send({
-        message: "Payment failed",
+        message: "Pembayaran Gagal!!",
         data: error,
         success: false,
       });
@@ -76,7 +76,7 @@ router.post("/make-payment", authMiddleware, async (req, res) => {
   }
 });
 
-// get bookings by user id
+
 router.post("/get-bookings-by-user-id", authMiddleware, async (req, res) => {
   try {
     const bookings = await Booking.find({ user: req.body.userId })
@@ -96,7 +96,7 @@ router.post("/get-bookings-by-user-id", authMiddleware, async (req, res) => {
   }
 });
 
-// get all bookings
+
 router.post("/get-all-bookings", authMiddleware, async (req, res) => {
   try {
     const bookings = await Booking.find().populate("bus").populate("user");

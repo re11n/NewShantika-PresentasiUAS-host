@@ -42,25 +42,25 @@ function Bookings() {
 
   const columns = [
     {
-      title: "Bus Name",
+      title: "Nama Bus",
       dataIndex: "name",
       key: "bus",
     },
     {
-      title: "Bus Number",
+      title: "Nomor Bus",
       dataIndex: "number",
       key: "bus",
     },
     {
-      title: "Journey Date",
+      title: "Tanggal Berangkat",
       dataIndex: "journeyDate",
     },
     {
-      title: "Journey Time",
+      title: "Jam Berangkat",
       dataIndex: "departure",
     },
     {
-      title: "Seats",
+      title: "Kursi",
       dataIndex: "seats",
       render: (seats) => {
         return seats.join(", ");
@@ -78,7 +78,7 @@ function Bookings() {
               setShowPrintModal(true);
             }}
           >
-            Print Ticekt
+            Print Tiket
           </p>
         </div>
       ),
@@ -118,21 +118,21 @@ function Bookings() {
             </p>
             <hr />
             <p>
-              <span>Journey Date:</span>{" "}
+              <span>Tanggal Berangkat:</span>{" "}
               {moment(selectedBooking.journeyDate).format("DD-MM-YYYY")}
             </p>
             <p>
-              <span>Journey Time:</span> {selectedBooking.departure}
+              <span>Jam Berangkat:</span> {selectedBooking.departure}
             </p>
             <hr />
             <p>
-              <span>Seat Numbers:</span> <br />
+              <span>Nomor Kursi:</span> <br />
               {selectedBooking.seats}
             </p>
             <hr />
             <p>
-              <span>Total Amount:</span>{" "}
-              {selectedBooking.fare * selectedBooking.seats.length} /-
+              <span>Harga:</span>{" "}
+              {selectedBooking.fare * selectedBooking.seats.length}
             </p>
           </div>
         </Modal>

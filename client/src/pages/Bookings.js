@@ -118,21 +118,21 @@ function Bookings() {
             </p>
             <hr />
             <p>
-              <span>Journey Date:</span>{" "}
+              <span>Tanggal Berangkat:</span>{" "}
               {moment(selectedBooking.journeyDate).format("DD-MM-YYYY")}
             </p>
             <p>
-              <span>Journey Time:</span> {selectedBooking.departure}
+              <span>Jam Berangkat:</span> {selectedBooking.departure}
             </p>
             <hr />
             <p>
-              <span>Seat Numbers:</span> <br />
+              <span>Nomor Kursi:</span> <br />
               {selectedBooking.seats}
             </p>
             <hr />
             <p>
-              <span>Total Amount:</span>{" "}
-              {selectedBooking.fare * selectedBooking.seats.length} /-
+              <span>Harga:</span>{" "}
+              {selectedBooking.fare * selectedBooking.seats.length}
             </p>
           </div>
         </Modal>

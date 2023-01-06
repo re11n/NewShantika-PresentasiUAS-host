@@ -11,7 +11,7 @@ router.post("/register", async (req, res) => {
     const existingUser = await User.findOne({ email: req.body.email });
     if (existingUser) {
       return res.send({
-        message: "User already exists",
+        message: "User Sudah Ada",
         success: false,
         data: null,
       });
@@ -21,7 +21,7 @@ router.post("/register", async (req, res) => {
     const newUser = new User(req.body);
     await newUser.save();
     res.send({
-      message: "User created successfully",
+      message: "User Berhasil Dibuat",
       success: true,
       data: null,
     });
@@ -41,7 +41,7 @@ router.post("/login", async (req, res) => {
     const userExists = await User.findOne({ email: req.body.email });
     if (!userExists) {
       return res.send({
-        message: "User does not exist",
+        message: "Email Tidak Ditemukan",
         success: false,
         data: null,
       });
@@ -62,7 +62,7 @@ router.post("/login", async (req, res) => {
 
     if (!passwordMatch) {
       return res.send({
-        message: "Incorrect password",
+        message: "Password Salah",
         success: false,
         data: null,
       });
@@ -73,7 +73,7 @@ router.post("/login", async (req, res) => {
     });
 
     res.send({
-      message: "User logged in successfully",
+      message: "Berhasil Login",
       success: true,
       data: token,
     });

@@ -29,7 +29,7 @@ function Register() {
   return (
     <div className="h-screen d-flex justify-content-center align-items-center auth">
       <div className="w-400 card p-3">
-        <h1 className="text-lg">SheyBus - Register</h1>
+        <h1 className="text-lg">New Shantika - Register</h1>
         <hr />
         <Form layout="vertical" onFinish={onFinish}>
           <Form.Item label="Name" name="name">
@@ -42,7 +42,7 @@ function Register() {
             <input type="password" />
           </Form.Item>
           <div className="d-flex justify-content-between align-items-center my-3">
-            <Link to="/login">Click Here To Login</Link>
+            <Link to="/login">Sudah Punya Akun?</Link>
             <button className="secondary-btn" type="submit">
               Register
             </button>
