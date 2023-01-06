@@ -67,8 +67,8 @@ function DefaultLayout({ children }) {
     <div className="layout-parent">
       <div className="sidebar">
         <div className="sidebar-header">
-             <h1 className="logo">SB</h1>
-             <h1 className="role">{user?.name} <br />Role : {user?.isAdmin ? 'Admin' : 'User'}</h1>
+             <h2 className="logo">New Shantika</h2>
+             <h1 className="role">{user?.name}</h1>
         </div>
         <div className="d-flex flex-column gap-3 justify-content-start menu">
           {menuToBeRendered.map((item, index) => {

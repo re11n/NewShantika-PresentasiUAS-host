@@ -120,8 +120,8 @@ function BookNow() {
                 billingAddress
                 token={onToken}
                 amount={bus.fare * selectedSeats.length * 100}
-                currency="INR"
-                stripeKey="pk_test_51IYnC0SIR2AbPxU0TMStZwFUoaDZle9yXVygpVIzg36LdpO8aSG8B9j2C0AikiQw2YyCI8n4faFYQI5uG3Nk5EGQ00lCfjXYvZ"
+                currency="USD"
+                stripeKey="pk_test_51MNARNAZLw9ZLaz9C24kt0bJwZxOfw9N2CUZLJakfT2yg0SYQzqvZrh2IfKLc8RUqGNMkPXfHyQKE11u8mXA9Lnq00RVdmARsJ"
               >
                 <button
                   className={`primary-btn ${
