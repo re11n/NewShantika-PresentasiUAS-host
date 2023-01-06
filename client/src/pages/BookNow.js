@@ -87,32 +87,32 @@ function BookNow() {
 
             <div className="flex flex-col gap-2">
               <p className="text-md">
-                Jourey Date : {bus.journeyDate}
+                Tanggal Keberangkatan : {bus.journeyDate}
               </p>
               <p className="text-md">
-                Fare : $ {bus.fare} /-
+                Harga : $ {bus.fare} /-
               </p>
               <p className="text-md">
-                Departure Time : {bus.departure}
+                Jam Berangkat : {bus.departure}
               </p>
               <p className="text-md">
-                Arrival Time : {bus.arrival}
+                Jam Sampai : {bus.arrival}
               </p>
               <p className="text-md">
-                Capacity : {bus.capacity}
+                Kapasitas : {bus.capacity}
               </p>
               <p className="text-md">
-                Seats Left : {bus.capacity - bus.seatsBooked.length}
+                Sisa Kursi : {bus.capacity - bus.seatsBooked.length}
               </p>
             </div>
             <hr />
 
             <div className="flex flex-col gap-2">
               <h1 className="text-2xl">
-                Selected Seats : {selectedSeats.join(", ")}
+                Kursi yang dipilih : {selectedSeats.join(", ")}
               </h1>
               <h1 className="text-2xl mt-2">
-                Fare : {bus.fare * selectedSeats.length} /-
+                Harga: {bus.fare * selectedSeats.length} /-
               </h1>
               <hr />
 
@@ -129,7 +129,7 @@ function BookNow() {
                   }`}
                   disabled={selectedSeats.length === 0}
                 >
-                  Book Now
+                  Pesan Tiket
                 </button>
               </StripeCheckout>
             </div>
