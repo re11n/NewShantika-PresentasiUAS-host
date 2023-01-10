@@ -5,12 +5,18 @@ import { useDispatch, useSelector } from "react-redux";
 import Bus from "../components/Bus";
 import { axiosInstance } from "../helpers/axiosInstance";
 import { HideLoading, ShowLoading } from "../redux/alertsSlice";
+import {Routes, Route, useNavigate} from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
   const { user } = useSelector((state) => state.users);
   const [filters = {}, setFilters] = useState({});
   const dispatch = useDispatch();
   const [buses, setBuses] = useState([]);
+  const navigateJadwal = () => {
+    // 👇️ navigate to /
+    navigate('/jadwal');
+  };
   const getBuses = async () => {
     const tempFilters = {};
     Object.keys(filters).forEach((key) => {
@@ -80,8 +86,8 @@ function Home() {
           </Col>
           <Col lg={6} sm={24}>
             <div className="d-flex gap-2">
-              <button className="primary-btn" onClick={() => getBuses()}>
-                Filter
+              <button className="primary-btn" onClick={navigateJadwal}>
+                Cari
               </button>
               <button
                 className="outlined px-3"
