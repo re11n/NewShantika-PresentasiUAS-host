@@ -14,6 +14,7 @@ import AdminUsers from "./pages/Admin/AdminUsers";
 import BookNow from "./pages/BookNow";
 import Bookings from "./pages/Bookings";
 import AdminBookings from "./pages/Admin/AdminBookings";
+import Jadwal from "./pages/Jadwal";
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -27,6 +28,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Home />
+              </ProtectedRoute>
+            }
+          />
+            <Route
+            path="/jadwal"
+            element={
+              <ProtectedRoute>
+                <Jadwal />
               </ProtectedRoute>
             }
           />
