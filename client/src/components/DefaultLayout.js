@@ -18,11 +18,13 @@ function DefaultLayout({ children }) {
       icon: "ri-file-list-line",
       path: "/bookings",
     },
-    // {
-    //   name: "Profile",
-    //   icon: "ri-user-line",
-    //   path: "/profile",
-    // },
+/*
+     {
+       name: "Profile",
+      icon: "ri-user-line",
+      path: "/profile",
+  }, */
+
     {
       name: "Logout",
       icon: "ri-logout-box-line",
@@ -67,8 +69,8 @@ function DefaultLayout({ children }) {
     <div className="layout-parent">
       <div className="sidebar">
         <div className="sidebar-header">
-             <h2 className="logo">New Shantika</h2>
-             <h1 className="role">{user?.name}</h1>
+             <h2  ><img src= "img/logo.png" alt="side-bar" className="logo"/></h2>
+             <h1 className="role"> {user?.name}</h1>
         </div>
         <div className="d-flex flex-column gap-3 justify-content-start menu">
           {menuToBeRendered.map((item, index) => {

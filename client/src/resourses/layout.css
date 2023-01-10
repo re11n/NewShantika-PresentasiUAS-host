@@ -26,8 +26,12 @@
   flex-direction: column;
 }
 .logo {
-  color: white;
+  margin-top: 20px;
+  height: 5rem;
+  width: 15rem;
 }
+
+
 .role {
   color: white;
   font-size: 16px;
@@ -64,3 +68,51 @@
   overflow-x: hidden !important;
   height: 85vh;
 }
+
+.hero-poster img {
+  width: 100%;
+  border-radius: 2em;
+  position: relative;
+  z-index: -1;
+}
+
+.hero-form {
+  padding: 40px;
+  display: flex;
+  position: relative;
+  bottom: 4em;
+  z-index: 0;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 0.2em 4.2rem -1.5rem blueviolet;
+  background-color: white;
+  border-radius: 1em;
+  padding: 2em;
+  flex-wrap: wrap;
+  row-gap: 1em;
+}
+
+.hero-form h3{
+  text-align: left;
+}
+/*
+.hero-form div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 0.2em 4.2rem -1.5rem blueviolet;
+  background-color: white;
+  border-radius: 1em;
+  padding: 2em;
+  flex-wrap: wrap;
+  row-gap: 1em;
+}
+*/
+
+
+
+

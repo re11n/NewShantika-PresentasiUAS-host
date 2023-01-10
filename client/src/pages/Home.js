@@ -45,8 +45,12 @@ function Home() {
     getBuses();
   }, []);
   return (
-    <div>
-      <div className="my-3 py-1">
+      <div className="hero-section ">
+        <div className="hero-poster">
+          <img src="img/hero-poster.png" alt="hero-poster" />
+        </div>
+      <div className="hero-form">
+        <h3>Mau Kemana hari ini {user?.name}?</h3>
         <Row gutter={10} align="center">
           <Col lg={6} sm={24}>
             <input
