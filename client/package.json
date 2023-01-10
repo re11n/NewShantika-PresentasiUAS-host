@@ -19,6 +19,7 @@
     "react-stripe-checkout": "^2.6.3",
     "react-to-print": "^2.14.7",
     "redux": "^4.2.0",
+    "swiper": "^8.4.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

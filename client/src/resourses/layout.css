@@ -85,7 +85,6 @@
   align-items: center;
   justify-content: space-evenly;
   width: 80%;
-  margin: auto;
   box-shadow: 0 0.2em 4.2rem -1.5rem blueviolet;
   background-color: white;
   border-radius: 1em;
@@ -96,6 +95,9 @@
 
 .hero-form h3{
   text-align: left;
+}
+.hero-section-jadwal{
+  margin-top: 40px;
 }
 /*
 .hero-form div {
@@ -113,6 +115,84 @@
 }
 */
 
+/* ========================== OFFER SLIDER ===================================== */
+
+.swiper {
+  margin-left: 79px;
+  width: 70%;
+  box-shadow: 0 0.2em 4.2rem -1.5rem blueviolet;
+
+}
+.swiper-slide {
+  text-align: center;
+ 
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1em;
+}
+
+/* ==================================================================== */
 
 
+/* ============== Facility Section ==================== */
+
+.facility-section {
+  display: flex;
+  row-gap: 1em;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin-top: 2cm;
+ 
+}
+
+.facility-section h1{
+text-align: center;
+}
+
+
+.facility-section .facility {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 2em;
+  size-adjust: 50%;
+}
+
+.facility section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5em;
+ 
+}
+.facility section img {
+  width: 10em;
+}
+.facility section h3 {
+  color: rgb(86, 4, 162);
+}
+
+/* ======================================================== */
 

@@ -45,10 +45,7 @@ function Home() {
     getBuses();
   }, []);
   return (
-      <div className="hero-section ">
-        <div className="hero-poster">
-          <img src="img/hero-poster.png" alt="hero-poster" />
-        </div>
+      <div className="hero-section-jadwal ">
       <div className="hero-form">
         <h3>Mau Kemana hari ini {user?.name}?</h3>
         <Row gutter={10} align="center">
@@ -97,6 +94,17 @@ function Home() {
               </button>
             </div>
           </Col>
+        </Row>
+      </div>
+      <div>
+        <Row gutter={[15, 15]}>
+          {buses
+            .filter((bus) => bus.status === "Yet To Start")
+            .map((bus) => (
+              <Col lg={12} xs={24} sm={24}>
+                <Bus bus={bus} />
+              </Col>
+            ))}
         </Row>
       </div>
     </div>
