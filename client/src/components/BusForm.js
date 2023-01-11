@@ -56,50 +56,50 @@ function BusForm({
       <Form layout="vertical" onFinish={onFinish} initialValues={selectedBus}>
         <Row gutter={[10, 10]}>
           <Col lg={24} xs={24}>
-            <Form.Item label="Bus Name" name="name">
+            <Form.Item label="Nama Bus" name="name">
               <input type="text" />
             </Form.Item>
           </Col>
           <Col lg={12} xs={24}>
-            <Form.Item label="Bus Number" name="number">
+            <Form.Item label="Nomor Bus" name="number">
               <input type="text" />
             </Form.Item>
           </Col>
           <Col lg={12} xs={24}>
-            <Form.Item label="Capacity" name="capacity">
+            <Form.Item label="Kapasitas" name="capacity">
               <input type="text" />
             </Form.Item>
           </Col>
 
           <Col lg={12} xs={24}>
-            <Form.Item label="From" name="from">
+            <Form.Item label="Dari" name="from">
               <input type="text" />
             </Form.Item>
           </Col>
           <Col lg={12} xs={24}>
-            <Form.Item label="To" name="to">
+            <Form.Item label="Ke" name="to">
               <input type="text" />
             </Form.Item>
           </Col>
 
           <Col lg={8} xs={24}>
-            <Form.Item label="Journey Date" name="journeyDate">
+            <Form.Item label="Tanggal Berangkat" name="journeyDate">
               <input type="date" />
             </Form.Item>
           </Col>
           <Col lg={8} xs={24}>
-            <Form.Item label="Departure" name="departure">
+            <Form.Item label="Jam Berangkat" name="departure">
               <input type="time" />
             </Form.Item>
           </Col>
           <Col lg={8} xs={24}>
-            <Form.Item label="Arrival" name="arrival">
+            <Form.Item label="Jam Sampai" name="arrival">
               <input type="time" />
             </Form.Item>
           </Col>
 
           <Col lg={12} xs={24}>
-            <Form.Item label="Type" name="type">
+            <Form.Item label="Tipe" name="type">
               <select name="" id="">
                 <option value="AC" selected="selected">AC</option>
                 <option value="Non-AC">Non-AC</option>
@@ -107,7 +107,7 @@ function BusForm({
             </Form.Item>
           </Col>
           <Col lg={12} xs={24}>
-            <Form.Item label="Fare" name="fare">
+            <Form.Item label="Harga" name="fare">
               <input type="text" />
             </Form.Item>
           </Col>
