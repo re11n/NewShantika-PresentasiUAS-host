@@ -16,6 +16,24 @@ router.post("/register", async (req, res) => {
         data: null,
       });
     }
+
+    const pw = req.body.password;
+    if (pw.length <8){
+      return res.send({
+        message: "password minimal 8 karakter",
+        success: false,
+        data: null,
+      });
+    }
+
+    if(pw != req.body.confirmpassword){
+      return res.send({
+        message: "password tidak sama, mohon masukkan ulang",
+        success: false,
+        data: null,
+      });
+    }
+
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     req.body.password = hashedPassword;
     const newUser = new User(req.body);
