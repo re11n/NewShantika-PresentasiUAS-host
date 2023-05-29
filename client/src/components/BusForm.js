@@ -82,6 +82,17 @@ function BusForm({
             </Form.Item>
           </Col>
 
+          <Col lg={12} xs={24}>
+            <Form.Item label="Plat Bus" name="platBis">
+              <input type="text" />
+            </Form.Item>
+          </Col>
+          <Col lg={12} xs={24}>
+            <Form.Item label="Nama Driver" name="driverName">
+              <input type="text" />
+            </Form.Item>
+          </Col>
+
           <Col lg={8} xs={24}>
             <Form.Item label="Tanggal Berangkat" name="journeyDate">
               <input type="date" />

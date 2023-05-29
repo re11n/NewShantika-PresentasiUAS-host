@@ -9,6 +9,14 @@ const busSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  platBis: {
+    type: String,
+    required: true,
+  },
+  driverName: {
+    type: String,
+    required: true,
+  },
   capacity: {
     type: Number,
     required: true,

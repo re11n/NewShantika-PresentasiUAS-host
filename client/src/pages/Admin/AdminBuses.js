@@ -58,6 +58,14 @@ function AdminBuses() {
       dataIndex: "number",
     },
     {
+      title: "Nama Driver",
+      dataIndex: "driverName",
+    },
+    {
+      title: "Plat Bis",
+      dataIndex: "platBis",
+    },
+    {
       title: "Dari",
       dataIndex: "from",
     },

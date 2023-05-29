@@ -8,13 +8,13 @@ import PublicRoute from "./components/PublicRoute";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Loader from "./components/Loader";
 import { useSelector } from "react-redux";
-import AdminHome from "./pages/Admin/AdminHome";
 import AdminBuses from "./pages/Admin/AdminBuses";
 import AdminUsers from "./pages/Admin/AdminUsers";
 import BookNow from "./pages/BookNow";
 import Bookings from "./pages/Bookings";
 import AdminBookings from "./pages/Admin/AdminBookings";
 import Jadwal from "./pages/Jadwal";
+import Pembayaran from "./pages/Pembayaran";
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -36,6 +36,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Jadwal />
+              </ProtectedRoute>
+            }
+          />
+            <Route
+            path="/pembayaran"
+            element={
+              <ProtectedRoute>
+                <Pembayaran />
               </ProtectedRoute>
             }
           />

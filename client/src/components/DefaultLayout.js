@@ -19,6 +19,11 @@ function DefaultLayout({ children }) {
       path: "/bookings",
     },
     {
+      name: "Pembayaran",
+      icon: "ri-file-list-line",
+      path: "/pembayaran",
+    },
+    {
       name: "Jadwal",
       icon: "ri-ticket-line",
       path: "/jadwal",

@@ -42,7 +42,7 @@ router.post("/make-payment", authMiddleware, async (req, res) => {
     const payment = await stripe.charges.create(
       {
         amount: amount,
-        currency: "usd",
+        currency: "idr",
         customer: customer.id,
         receipt_email: token.email,
       },

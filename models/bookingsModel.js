@@ -20,6 +20,10 @@ const bookingSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    dibayar: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
