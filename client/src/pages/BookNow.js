@@ -90,7 +90,7 @@ function BookNow() {
                 Tanggal Keberangkatan : {bus.journeyDate}
               </p>
               <p className="text-md">
-                Harga : $ {bus.fare} /-
+                Harga : Rp {bus.fare} /-
               </p>
               <p className="text-md">
                 Jam Berangkat : {bus.departure}

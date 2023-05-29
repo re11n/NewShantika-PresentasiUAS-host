@@ -20,7 +20,7 @@ function Bus({ bus }) {
 
         <div>
           <p className="text-sm">Harga Tiket</p>
-          <p className="text-sm">$ {bus.fare} /-</p>
+          <p className="text-sm">Rp {bus.fare} /-</p>
         </div>
       </div>
       <hr />
