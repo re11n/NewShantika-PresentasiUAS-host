@@ -23,6 +23,17 @@ function Bus({ bus }) {
           <p className="text-sm">Rp {bus.fare} /-</p>
         </div>
       </div>
+      <div className="d-flex justify-content-between pad">
+        <div>
+          <p className="text-sm">Jam Berangkat</p>
+          <p className="text-sm">{bus.departure}</p>
+        </div>
+
+        <div>
+          <p className="text-sm">Jam Sampai</p>
+          <p className="text-sm">{bus.arrival}</p>
+        </div>
+      </div>
       <hr />
       <div className="d-flex justify-content-between align-items-end">
         <div>
