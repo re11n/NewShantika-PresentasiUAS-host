@@ -10,7 +10,9 @@ router.post("/book-seat", authMiddleware, async (req, res) => {
   try {
     const newBooking = new Booking({
       ...req.body,
+      transactionId: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
       user: req.body.userId,
+      harga: req.body.harga
     });
     await newBooking.save();
     const bus = await Bus.findById(req.body.bus);
@@ -32,7 +34,7 @@ router.post("/book-seat", authMiddleware, async (req, res) => {
 
 
 
-router.post("/make-payment", authMiddleware, async (req, res) => {
+/*router.post("/make-payment", authMiddleware, async (req, res) => {
   try {
     const { token, amount } = req.body;
     const customer = await stripe.customers.create({
@@ -74,12 +76,49 @@ router.post("/make-payment", authMiddleware, async (req, res) => {
       success: false,
     });
   }
-});
+});*/
 
 
 router.post("/get-bookings-by-user-id", authMiddleware, async (req, res) => {
   try {
-    const bookings = await Booking.find({ user: req.body.userId })
+    const bookings = await Booking.find({ user: req.body.userId, dibayar: "true" })
+      .populate("bus")
+      .populate("user");
+    res.status(200).send({
+      message: "Bookings fetched successfully",
+      data: bookings,
+      success: true,
+    });
+  } catch (error) {
+    res.status(500).send({
+      message: "Bookings fetch failed",
+      data: error,
+      success: false,
+    });
+  }
+});
+
+router.post("/get-update-payment-status", authMiddleware, async (req, res) => {
+  try {
+    await Booking.findOneAndUpdate({transactionId: req.body.transactionId}, {dibayar: "true"})
+    res.send({
+      message: req.body.transactionId,
+      success: true,
+      data: null,
+    });
+  } catch (error) {
+    res.send({
+      message: req.body,
+      success: false,
+      data: null,
+    });
+  }
+});
+
+
+router.post("/get-bookings-by-payment-status", authMiddleware, async (req, res) => {
+  try {
+    const bookings = await Booking.find({ user: req.body.userId, dibayar: "false" })
       .populate("bus")
       .populate("user");
     res.status(200).send({
@@ -114,5 +153,7 @@ router.post("/get-all-bookings", authMiddleware, async (req, res) => {
   }
 });
     
+
+
 
 module.exports = router;

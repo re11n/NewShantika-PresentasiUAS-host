@@ -20,8 +20,12 @@ const bookingSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    harga: {
+      type: String,
+      require: true,
+    },
     dibayar: {
-      type: Boolean,
+      type: String,
       default: false,
     },
   },

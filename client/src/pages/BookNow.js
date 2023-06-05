@@ -5,7 +5,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import SeatSelection from "../components/SeatSelection";
 import { axiosInstance } from "../helpers/axiosInstance";
 import { HideLoading, ShowLoading } from "../redux/alertsSlice";
-import StripeCheckout from "react-stripe-checkout";
 
 function BookNow() {
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -31,18 +30,18 @@ function BookNow() {
     }
   };
 
-  const bookNow = async (transactionId) => {
+  const bookNow = async () => {
     try {
       dispatch(ShowLoading());
       const response = await axiosInstance.post("/api/bookings/book-seat", {
         bus: bus._id,
         seats: selectedSeats,
-        transactionId,
+        harga: bus.fare * selectedSeats.length
       });
       dispatch(HideLoading());
       if (response.data.success) {
         message.success(response.data.message);
-        navigate("/bookings");
+        navigate("/pembayaran");
       } else {
         message.error(response.data.message);
       }
@@ -52,7 +51,7 @@ function BookNow() {
     }
   };
 
-  const onToken = async (token) => {
+/*  const onToken = async (token) => {
     try {
       dispatch(ShowLoading());
       const response = await axiosInstance.post("/api/bookings/make-payment", {
@@ -71,6 +70,7 @@ function BookNow() {
       message.error(error.message);
     }
   };
+  */
   useEffect(() => {
     getBus();
   }, []);
@@ -116,14 +116,9 @@ function BookNow() {
               </h1>
               <hr />
 
-              <StripeCheckout
-                billingAddress
-                token={onToken}
-                amount={bus.fare * selectedSeats.length * 100}
-                currency="USD"
-                stripeKey="pk_test_51MNARNAZLw9ZLaz9C24kt0bJwZxOfw9N2CUZLJakfT2yg0SYQzqvZrh2IfKLc8RUqGNMkPXfHyQKE11u8mXA9Lnq00RVdmARsJ"
-              >
+
                 <button
+                  onClick={bookNow}
                   className={`primary-btn ${
                     selectedSeats.length === 0 && "disabled-btn"
                   }`}
@@ -131,7 +126,6 @@ function BookNow() {
                 >
                   Pesan Tiket
                 </button>
-              </StripeCheckout>
             </div>
           </Col>
           <Col lg={12} xs={24} sm={24}>
