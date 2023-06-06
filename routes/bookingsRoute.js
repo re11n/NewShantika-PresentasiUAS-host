@@ -5,14 +5,13 @@ const Bus = require("../models/busModel");
 const stripe = require("stripe")(process.env.stripe_key);
 const { v4: uuidv4 } = require("uuid");
 
-
 router.post("/book-seat", authMiddleware, async (req, res) => {
   try {
     const newBooking = new Booking({
       ...req.body,
-      transactionId: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
+      transactionId: Math.floor(Math.random() * (9999999 - 100 + 1)) + 100,
       user: req.body.userId,
-      harga: req.body.harga
+      harga: req.body.harga,
     });
     await newBooking.save();
     const bus = await Bus.findById(req.body.bus);
@@ -31,8 +30,6 @@ router.post("/book-seat", authMiddleware, async (req, res) => {
     });
   }
 });
-
-
 
 /*router.post("/make-payment", authMiddleware, async (req, res) => {
   try {
@@ -78,10 +75,12 @@ router.post("/book-seat", authMiddleware, async (req, res) => {
   }
 });*/
 
-
 router.post("/get-bookings-by-user-id", authMiddleware, async (req, res) => {
   try {
-    const bookings = await Booking.find({ user: req.body.userId, dibayar: "true" })
+    const bookings = await Booking.find({
+      user: req.body.userId,
+      dibayar: "true",
+    })
       .populate("bus")
       .populate("user");
     res.status(200).send({
@@ -98,22 +97,31 @@ router.post("/get-bookings-by-user-id", authMiddleware, async (req, res) => {
   }
 });
 
-router.post("/get-bookings-by-transaction-id", authMiddleware, async (req, res) => {
-  try {
-    const book = await Booking.findOne({transactionId: req.body.transactionId});
-    return res.status(200).send({
-      success: true,
-      message: "Bus fetched successfully",
-      data: book,
-    });
-  } catch (error) {
-    res.status(500).send({ success: false, message: error.message });
+router.post(
+  "/get-bookings-by-transaction-id",
+  authMiddleware,
+  async (req, res) => {
+    try {
+      const book = await Booking.findOne({
+        transactionId: req.body.transactionId,
+      });
+      return res.status(200).send({
+        success: true,
+        message: "Bus fetched successfully",
+        data: book,
+      });
+    } catch (error) {
+      res.status(500).send({ success: false, message: error.message });
+    }
   }
-});
+);
 
 router.post("/get-update-payment-status", authMiddleware, async (req, res) => {
   try {
-    await Booking.findOneAndUpdate({transactionId: req.body.transactionId}, {dibayar: "true"})
+    await Booking.findOneAndUpdate(
+      { transactionId: req.body.transactionId },
+      { dibayar: "true" }
+    );
     res.send({
       message: "pembayaran berhasil",
       success: true,
@@ -128,26 +136,31 @@ router.post("/get-update-payment-status", authMiddleware, async (req, res) => {
   }
 });
 
-
-router.post("/get-bookings-by-payment-status", authMiddleware, async (req, res) => {
-  try {
-    const bookings = await Booking.find({ user: req.body.userId, dibayar: "false" })
-      .populate("bus")
-      .populate("user");
-    res.status(200).send({
-      message: "Bookings fetched successfully",
-      data: bookings,
-      success: true,
-    });
-  } catch (error) {
-    res.status(500).send({
-      message: "Bookings fetch failed",
-      data: error,
-      success: false,
-    });
+router.post(
+  "/get-bookings-by-payment-status",
+  authMiddleware,
+  async (req, res) => {
+    try {
+      const bookings = await Booking.find({
+        user: req.body.userId,
+        dibayar: "false",
+      })
+        .populate("bus")
+        .populate("user");
+      res.status(200).send({
+        message: "Bookings fetched successfully",
+        data: bookings,
+        success: true,
+      });
+    } catch (error) {
+      res.status(500).send({
+        message: "Bookings fetch failed",
+        data: error,
+        success: false,
+      });
+    }
   }
-});
-
+);
 
 router.post("/get-all-bookings", authMiddleware, async (req, res) => {
   try {
@@ -165,8 +178,5 @@ router.post("/get-all-bookings", authMiddleware, async (req, res) => {
     });
   }
 });
-    
-
-
 
 module.exports = router;

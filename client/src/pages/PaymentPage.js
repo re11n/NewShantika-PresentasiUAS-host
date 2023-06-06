@@ -97,25 +97,20 @@ function PaymentPage() {
               <p className="text-md">
                 Silahkan Bayar melalui salah satu metode pembayaran:
               </p>
-              <br></br> 
-              <strong className="text-md">
-                QRIS:                   
-              </strong>
-              <br></br>     
-              <img src="/img/qr-pembayaran.png"  alt="qr" width="200" height="200"/> 
-              <br></br> 
-              <br></br> 
-              <strong className="text-md">
-                Transfer Bank:
-              </strong>
-              <p className="text-md">
-                No rekening: 8162737321713
-              </p>
-              <p className="text-md">
-                A/N New Shantika
-              </p>
-              
-
+              <br></br>
+              <strong className="text-md">QRIS:</strong>
+              <br></br>
+              <img
+                src="/img/qr-pembayaran.png"
+                alt="qr"
+                width="200"
+                height="200"
+              />
+              <br></br>
+              <br></br>
+              <strong className="text-md">Transfer Bank:</strong>
+              <p className="text-md">No rekening: 8162737321713</p>
+              <p className="text-md">A/N New Shantika</p>
             </div>
             <hr />
             <div className="flex flex-col gap-2">
