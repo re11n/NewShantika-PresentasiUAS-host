@@ -98,11 +98,24 @@ router.post("/get-bookings-by-user-id", authMiddleware, async (req, res) => {
   }
 });
 
+router.post("/get-bookings-by-transaction-id", authMiddleware, async (req, res) => {
+  try {
+    const book = await Booking.findOne({transactionId: req.body.transactionId});
+    return res.status(200).send({
+      success: true,
+      message: "Bus fetched successfully",
+      data: book,
+    });
+  } catch (error) {
+    res.status(500).send({ success: false, message: error.message });
+  }
+});
+
 router.post("/get-update-payment-status", authMiddleware, async (req, res) => {
   try {
     await Booking.findOneAndUpdate({transactionId: req.body.transactionId}, {dibayar: "true"})
     res.send({
-      message: req.body.transactionId,
+      message: "pembayaran berhasil",
       success: true,
       data: null,
     });

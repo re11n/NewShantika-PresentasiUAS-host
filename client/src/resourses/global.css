@@ -141,3 +141,18 @@ table{
 .pad{
   padding-top: 20px;
 }
+
+
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+  text-align: left;
+}
+
+.wrapper {
+  width:600px;
+  margin: 0 auto;
+}

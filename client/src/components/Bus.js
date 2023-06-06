@@ -20,7 +20,7 @@ function Bus({ bus }) {
 
         <div>
           <p className="text-sm">Harga Tiket</p>
-          <p className="text-sm">Rp {bus.fare} /-</p>
+          <p className="text-sm">Rp {parseInt(bus.fare).toLocaleString('en-US')} /-</p>
         </div>
       </div>
       <div className="d-flex justify-content-between pad">

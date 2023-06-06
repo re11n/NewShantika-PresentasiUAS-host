@@ -5,11 +5,12 @@ import { useDispatch } from "react-redux";
 import PageTitle from "../components/PageTitle";
 import { axiosInstance } from "../helpers/axiosInstance";
 import { HideLoading, ShowLoading } from "../redux/alertsSlice";
-
+import { useNavigate } from "react-router-dom";
 
 function Bookings() {
   const [bookings, setBookings] = useState([]);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const getBookings = async () => {
     try {
       dispatch(ShowLoading());
@@ -39,9 +40,10 @@ function Bookings() {
   const updatePembayaran = async (transaksi) => {
     try {
       dispatch(ShowLoading());
-      const response = await axiosInstance.post("/api/bookings/get-update-payment-status",
-      {transactionId: transaksi}
-);
+      const response = await axiosInstance.post(
+        "/api/bookings/get-update-payment-status",
+        { transactionId: transaksi }
+      );
       dispatch(HideLoading());
       if (response.data.success) {
         message.success(response.data.message);
@@ -59,10 +61,6 @@ function Bookings() {
     {
       title: "kode transaksi",
       dataIndex: "transactionId",
-    },
-    {
-      title: "tes",
-      dataIndex: "_id"
     },
     {
       title: "Nama Bus",
@@ -90,7 +88,8 @@ function Bookings() {
           <p
             className="text-md underline"
             onClick={() => {
-              updatePembayaran(record.transactionId);
+              ///updatePembayaran(record.transactionId);
+              navigate(`/payment-page/${record.transactionId}`)
             }}
           >
             Bayar Tiket

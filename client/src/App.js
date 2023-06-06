@@ -15,6 +15,7 @@ import Bookings from "./pages/Bookings";
 import AdminBookings from "./pages/Admin/AdminBookings";
 import Jadwal from "./pages/Jadwal";
 import Pembayaran from "./pages/Pembayaran";
+import PaymentPage from "./pages/PaymentPage";
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -31,7 +32,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-            <Route
+          <Route
             path="/jadwal"
             element={
               <ProtectedRoute>
@@ -39,7 +40,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-            <Route
+          <Route
             path="/pembayaran"
             element={
               <ProtectedRoute>
@@ -52,6 +53,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <BookNow />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/payment-page/:transactionId"
+            element={
+              <ProtectedRoute>
+                <PaymentPage />
               </ProtectedRoute>
             }
           />

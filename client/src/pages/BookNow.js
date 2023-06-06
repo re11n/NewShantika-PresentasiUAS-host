@@ -90,7 +90,7 @@ function BookNow() {
                 Tanggal Keberangkatan : {bus.journeyDate}
               </p>
               <p className="text-md">
-                Harga : Rp {bus.fare} /-
+                Harga : Rp {parseInt(bus.fare).toLocaleString('en-US')} /-
               </p>
               <p className="text-md">
                 Jam Berangkat : {bus.departure}
@@ -112,7 +112,7 @@ function BookNow() {
                 Kursi yang dipilih : {selectedSeats.join(", ")}
               </h1>
               <h1 className="text-2xl mt-2">
-                Harga: {bus.fare * selectedSeats.length} /-
+                Harga: Rp {parseInt(bus.fare * selectedSeats.length).toLocaleString('en-US')} /-
               </h1>
               <hr />
 
